@@ -17,7 +17,7 @@ RUN npm install
 
  
  
-EXPOSE 80
+EXPOSE 8081
 
 COPY . /usr/src/bankapp
 RUN rm -rf /usr/share/nginx/html/* && \
