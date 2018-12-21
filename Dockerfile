@@ -8,12 +8,13 @@ RUN apt-get update && \
     curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
     apt-get install -y nodejs
 
-RUN mkdir -p /usr/src/bankapp
+# RUN mkdir -p /app
 
-ENV APP_PATH /usr/src/bankapp
-WORKDIR $APP_PATH
+# ENV APP_PATH /usr/src/bankapp
+ENV NAME World
+WORKDIR /app
 
-COPY package.json $APP_PATH
+COPY package.json /app
 RUN npm install    
 
 COPY ./build /var/www
