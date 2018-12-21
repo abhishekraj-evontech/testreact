@@ -1,4 +1,5 @@
-FROM nginx:1.15.2-alpine
+FROM nginx
+
 LABEL maintainer "abhishek"
 ENV REFRESHED_AT 2018-12-21
  
