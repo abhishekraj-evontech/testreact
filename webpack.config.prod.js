@@ -19,7 +19,7 @@ const config = {
         app: './src/index.js',        
     },    
     output: {
-      path: path.resolve(__dirname, 'build'),
+      path: path.resolve(__dirname, 'dist'),
       filename: 'app.js',
       publicPath: '/'
     },
@@ -66,10 +66,10 @@ const config = {
           
         new WebpackMd5Hash(),
         
-        new Dotenv({
-          path: './.env.prd', // load this now instead of the ones in '.env'          
-          systemvars: true, // load all the predefined 'process.env' variables which will trump anything local per dotenv specs.
-        }),
+        // new Dotenv({
+        //   path: './.env.prd', // load this now instead of the ones in '.env'          
+        //   systemvars: true, // load all the predefined 'process.env' variables which will trump anything local per dotenv specs.
+        // }),
     
         // Minify JS
         new webpack.optimize.UglifyJsPlugin({
@@ -98,12 +98,12 @@ const config = {
     
         new webpack.NoEmitOnErrorsPlugin(),
     
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'app',
-            // filename: "vendor.js"
-            // (Give the chunk a different name)
-            minChunks: Infinity
-        }),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: 'app',
+        //     // filename: "vendor.js"
+        //     // (Give the chunk a different name)
+        //     minChunks: Infinity
+        // }),
     
         // Generate HTML file that contains references to generated bundles. See here for how this works: https://github.com/ampedandwired/html-webpack-plugin#basic-usage
         new HtmlWebpackPlugin({
