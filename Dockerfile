@@ -5,7 +5,7 @@ ENV REFRESHED_AT 2018-12-20
  
 RUN apt-get update && \
     apt-get install -y curl vim gnupg2 gnupg1 git  && \
-    curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
+    curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
     apt-get install -y nodejs && \
     mkdir -p /usr/src/bankapp
  
